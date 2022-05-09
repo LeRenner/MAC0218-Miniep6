@@ -1,0 +1,8 @@
+[parte 1]
+docker build -t caddy-website .
+docker run -d -p 80:80 caddy-website
+docker stop cranky_mahavira
+docker rm cranky_mahavira
+
+[parte 2]
+docker run -d --name lecaddy -v "$(pwd)"/website:/usr/share/caddy -p 80:80 caddy
